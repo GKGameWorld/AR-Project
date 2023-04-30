@@ -1,0 +1,11 @@
+Model Information:
+* title:	Homemade Bread   .::RAWscan::.
+* source:	https://sketchfab.com/3d-models/homemade-bread-rawscan-f95a2e18d8454902a779360306d680c5
+* author:	Andrea Spognetta (Spogna) (https://sketchfab.com/spogna)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Homemade Bread   .::RAWscan::." (https://sketchfab.com/3d-models/homemade-bread-rawscan-f95a2e18d8454902a779360306d680c5) by Andrea Spognetta (Spogna) (https://sketchfab.com/spogna) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
