@@ -7,10 +7,10 @@
     </head>
     <body style="margin : 0px; overflow: hidden;">
         <a-scene embedded arjs>
-            <a-marker preset="hiro">
-                <a-entity position = "0 0 0" scale = "0.05 0.05 0.05 " model="https://raw.githack.com/GKGameWorld/arprojekt/main/aframe/examples/scene.gltf"></a-entity>
-            </a-marker>
-        <a-entity camera></a-entity>
+            <a-assets>
+                <a-asset-item id="food1" src="https://raw.githack.com/GKGameWorld/arprojekt/main/aframe/examples/scene.gltf"></a-asset-item>
+            </a-assets>
+            <a-entry gltf-model="#food1" modify-materials></a-entry>
         </a-scene>
     </body>
 </html>
