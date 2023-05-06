@@ -5,15 +5,11 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <body style="margin : 0px; overflow: hidden;">
         <a-scene embedded arjs>
+            <a-assets> 
+                <img id="food" src="https://raw.githack.com/GKGameWorld/arprojekt/tree/main/aframe/examples/scene.gltf">
+              </a-assets>
         <a-marker preset="hiro">
-            <a-box position = "0 0 0" width = "1" height = "1" color="red"></a-box>
-            <!--eigens 3D modell hinterlegen 
-            <a-entity
-            position="0 0 0"
-            scale="0.05 0.05 0.05"
-            gltf-model="https://raw.githack.com/GKGameWorld/arprojekt/tree/main/aframe/examples/scene.gltf"
-            ></a-entity> 
-            --> 
+            <a-entity position="0 0 0" scale="0.05 0.05 0.05" material="src:#food"></a-entity> 
         </a-marker>
         <a-entity camera></a-entity>
         </a-scene>
