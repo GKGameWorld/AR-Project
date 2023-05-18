@@ -33,16 +33,12 @@
   </div> -->
 
   <!-- a-frame scene -->
-  <a-scene
-    vr-mode-ui="enabled: false;"
-    renderer="logarithmicDepthBuffer: true;"
-    embedded
-    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
-  >
+  <a-scene embedded>
+
     <!-- a-nft is the anchor that defines an Image Tracking entity -->
     <!-- on 'url' use the path to the Image Descriptors created before. -->
     <!-- the path should end with the name without the extension e.g. if file is 'pinball.fset' the path should end with 'pinball' -->
-    <a-marker-camera type='pattern' url='https://raw.githubusercontent.com/GKGameWorld/arprojekt/main/marker/pattern-Marker.patt'></a-marker-camera>
+    <a-marker-camera type='pattern' url='https://raw.githubusercontent.com/GKGameWorld/arprojekt/main/marker/pattern-Marker.patt'>
       <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
       <a-entity
         gltf-model="https://raw.githubusercontent.com/GKGameWorld/arprojekt/main/aframe/examples/scene.gltf"
@@ -50,7 +46,7 @@
         position="0 0 0"
       >
       </a-entity>
-    </a-nft>
+      </a-marker>
     <!-- static camera that moves according to the device movemenents -->
     <a-entity camera></a-entity>
   </a-scene>
