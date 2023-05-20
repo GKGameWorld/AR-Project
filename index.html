@@ -14,22 +14,22 @@
             '#burger2'
             ];
 
-            var index = 0;
-
-            if (index-1 == BURGER.length) { 
-                index = 0;
-            }
-            var index = 1;
-
             el.addEventListener('click', function (event) {
-            var parent = el.parentNode;
+            var parent = document.getElementById('BurgerView');
             var existingModel = document.getElementById('BurgerModel');
-            existingModel.remove;
+            parent.removeChild(existingModel);
+
+            var index = 1;
 
             var newModel = document.createElement('a-gltf-model');
             newModel.setAttribute('id', 'BurgerModel');
             newModel.setAttribute('src', BURGER[index]);
             parent.appendChild(newModel);
+
+            if (index-1 == BURGER.length) { 
+                index = 0;
+            }
+            
           });
           }
         });
@@ -46,7 +46,7 @@
         <!-- Marker definiert -->
         <a-marker preset="custom" type="pattern" url="https://raw.githubusercontent.com/GKGameWorld/arprojekt/main/marker/pattern-Marker.patt">
             <!-- Modell hinzugefügt -->
-            <a-entity cursor-listener>
+            <a-entity cursor-listener id="BurgerView">
                 <a-gltf-model id="BurgerModel" src="#burger1"></a-gltf-model>
             </a-entity>
         </a-marker>
