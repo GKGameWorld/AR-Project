@@ -11,7 +11,8 @@
             var el = this.el;
             var BURGER = [
             '#burger1',
-            '#burger2'
+            '#burger2',
+            '#burger3'
             ];
 
             el.addEventListener('click', function (event) {
@@ -19,17 +20,19 @@
             var existingModel = document.getElementById('BurgerModel');
             parent.removeChild(existingModel);
 
-            var index = 1;
+            index =+ 1;
 
             var newModel = document.createElement('a-gltf-model');
             newModel.setAttribute('id', 'BurgerModel');
             newModel.setAttribute('src', BURGER[index]);
             parent.appendChild(newModel);
 
-            if (index-1 == BURGER.length) { 
+            if (index == BURGER.length) { 
                 index = 0;
             }
-            
+            console.log(index);
+            console.log(BURGER.length);
+
           });
           }
         });
@@ -42,6 +45,7 @@
         <a-assets>
             <a-asset-item id="burger1" src="https://raw.githubusercontent.com/GKGameWorld/arprojekt/main/aframe/examples/Burgerembedded.gltf"></a-asset-item>
             <a-asset-item id="burger2" src="https://raw.githubusercontent.com/GKGameWorld/arprojekt/main/aframe/examples/scene.gltf"></a-asset-item>
+            <a-asset-item id="burger3" src="https://raw.githubusercontent.com/GKGameWorld/arprojekt/main/aframe/examples/Burger.gltf"></a-asset-item>
         </a-assets>
         <!-- Marker definiert -->
         <a-marker preset="custom" type="pattern" url="https://raw.githubusercontent.com/GKGameWorld/arprojekt/main/marker/pattern-Marker.patt">
