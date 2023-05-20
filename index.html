@@ -19,7 +19,7 @@
                 var newBurger = BURGER[index];
                 this.el.setAttribute('src', newBurger);
                 var index =+ 1; 
-                console.log('I was clicked at: ', evt.detail.intersection.point);
+                console.log('Es wurde geklickt');
             });
           }
         });
@@ -36,8 +36,8 @@
         <!-- Marker definiert -->
         <a-marker preset="custom" type="pattern" url="https://raw.githubusercontent.com/GKGameWorld/arprojekt/main/marker/pattern-Marker.patt">
             <!-- Modell hinzugefügt -->
-            <a-entity cursor-listener>
-                <a-gltf-model id="BurgerModel" src="#burger1"></a-gltf-model>
+            <a-entity>
+                <a-gltf-model cursor-listener id="BurgerModel" src="#burger1"></a-gltf-model>
             </a-entity>
         </a-marker>
         <!-- Button -->
