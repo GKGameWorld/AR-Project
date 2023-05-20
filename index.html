@@ -24,7 +24,7 @@
             el.addEventListener('click', function (event) {
             var parent = el.parentNode;
             var existingModel = document.getElementById('BurgerModel');
-            parent.removeChild(existingModel);
+            existingModel.remove;
 
             var newModel = document.createElement('a-gltf-model');
             newModel.setAttribute('id', 'BurgerModel');
