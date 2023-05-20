@@ -24,12 +24,12 @@
             el.addEventListener('click', function (event) {
             var parent = el.parentNode;
             var existingModel = document.getElementById('BurgerModel');
-            parent.remove(existingModel);
+            parent.removeChild(existingModel);
 
             var newModel = document.createElement('a-gltf-model');
             newModel.setAttribute('id', 'BurgerModel');
             newModel.setAttribute('src', BURGER[index]);
-            parent.append(newModel);
+            parent.appendChild(newModel);
           });
           }
         });
