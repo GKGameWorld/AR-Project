@@ -6,16 +6,23 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <!-- Modify -->
     <script>
-        AFRAME.registerComponent('click-listener', {
-            init: function () {
+        AFRAME.registerComponent('cursor-listener', {
+          init: function () {
             var el = this.el;
   
             el.addEventListener('click', function (event) {
-                el.setAttribute('src', '#burger1');
+              var parent = el.parentNode;
+              var existingModel = document.getElementById('BurgerModel');
+              parent.removeChild(existingModel);
+  
+              var newModel = document.createElement('a-gltf-model');
+              newModel.setAttribute('id', 'BurgerModel');
+              newModel.setAttribute('src', '#burger1');
+              parent.appendChild(newModel);
             });
           }
         });
-    </script>
+      </script>
 
   </head>
   <body style="margin: 0; overflow: hidden;">
@@ -28,14 +35,9 @@
         <!-- Marker definiert -->
         <a-marker preset="custom" type="pattern" url="https://raw.githubusercontent.com/GKGameWorld/arprojekt/main/marker/pattern-Marker.patt">
             <!-- Modell hinzugefügt -->
-            <a-gltf-model click-listener id="BurgerModel" src="#burger2"></a-gltf-model>
-            <!--
-            <a-entity
-                gltf-model="https://raw.githubusercontent.com/GKGameWorld/arprojekt/main/aframe/examples/Burger.gltf"
-                scale="1.2 1.2 1.2"
-                position="0 0 0"
-            ></a-entity>
-            -->
+            <a-entity cursor-listener>
+                <a-gltf-model id="BurgerModel" src="#burger2"></a-gltf-model>
+            </a-entity>
         </a-marker>
       <!-- Kamera -->
       <a-entity camera></a-entity>
