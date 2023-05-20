@@ -14,10 +14,11 @@
             ];
             console.log('Array wird geladen');
   
-            this.el.addEventListener('click', function (event) {
+            this.el.addEventListener('click', function () {
                 var index = 1;
                 var newBurger = BURGER[index];
                 this.setAttribute('src', newBurger);
+                var index =+ 1; 
                 console.log('I was clicked at: ', evt.detail.intersection.point);
             });
           }
@@ -39,6 +40,7 @@
                 <a-gltf-model cursor-listener id="BurgerModel" src="#burger1"></a-gltf-model>
             </a-entity>
         </a-marker>
+        <!-- Button -->
       <!-- Kamera -->
       <a-entity camera></a-entity>
     </a-scene>
