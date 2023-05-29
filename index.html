@@ -12,6 +12,13 @@
         sessionStorage.setItem('Burgernumber', '1');
     </script>
     <script>
+
+        var BURGER = [
+            '#burger1',
+            '#burger2',
+            '#burger3'
+        ];
+
         const element = document.getElementById("btn");
         element.addEventListener("click", changeBurger);
 
@@ -30,39 +37,6 @@
             parent.appendChild(newModel);
         }
     </script>
-    <script>
-        AFRAME.registerComponent('cursor-listener', {
-            init: function () {
-                var el = this.el;
-
-                var BURGER = [
-                    '#burger1',
-                    '#burger2',
-                    '#burger3'
-                ];
-
-                el.addEventListener('click', function (event) {
-                    var parent = document.getElementById('BurgerView');
-                    var existingModel = document.getElementById('BurgerModel');
-                    parent.removeChild(existingModel);
-
-                    var index = sessionStorage.getItem('Burgernumber');
-
-                    index = +1;
-                    sessionStorage.setItem('Burgernumber', index);
-
-                    var newModel = document.createElement('a-gltf-model');
-                    newModel.setAttribute('id', 'BurgerModel');
-                    newModel.setAttribute('src', BURGER[localStorage.getItem('Burgernumber')]);
-                    parent.appendChild(newModel);
-
-                    console.log(index);
-                    console.log(BURGER.length);
-                });
-            }
-        });
-    </script>
-
 </head>
 
 <body style="margin: 0; overflow: hidden;">
