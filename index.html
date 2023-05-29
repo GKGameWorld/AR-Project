@@ -6,64 +6,12 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar.js"></script>
     <!-- Modify -->
-    <script>
-        AFRAME.registerComponent('cursor-listener', {
-            init: function () {
-            var el = this.el;
-            
-            var BURGER = [
-            '#burger1',
-            '#burger2',
-            '#burger3'
-            ];
-
-            el.addEventListener('click', function (event) {
-            var parent = document.getElementById('BurgerView');
-            var existingModel = document.getElementById('BurgerModel');
-            parent.removeChild(existingModel);
-
-            var index = 1;
-
-            var newModel = document.createElement('a-gltf-model');
-            newModel.setAttribute('id', 'BurgerModel');
-            newModel.setAttribute('src', BURGER[index]);
-            parent.appendChild(newModel);
-
-            console.log(index);
-            console.log(BURGER.length);
-          });
-          }
-        });
-
-    </script>
-    <script>
-        window.addEventListener('camera-init', (data) => {
-            console.log('camera-init', data);
-        })
-    
-        window.addEventListener('camera-error', (error) => {
-            console.log('camera-error', error);
-        })
-    
-        AFRAME.registerComponent('registerevents', {
-            init: function () {
-                var marker = this.el;
-    
-                marker.addEventListener('markerFound', function() {
-                    var markerId = marker.id;
-                    console.log('markerFound', markerId);
-                });
-    
-                marker.addEventListener('markerLost', function() {
-                    var markerId = marker.id;
-                    console.log('markerLost', markerId);
-                });
-            }
-        });
-    </script>
+    <script src="https://raw.githubusercontent.com/GKGameWorld/arprojekt/main/event/switch-burger.js"></script>
 
   </head>
   <body style="margin: 0; overflow: hidden;">
+    <button cursor-listener class="favorite styled" type="button"> Next Burger </button>
+
     <a-scene vr-mode-ui="enabled: false" embedded stats arjs='sourceType: webcam; labelingMode: black_region; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
         <!-- Asset management system-->
         <a-assets>
@@ -73,16 +21,12 @@
             <a-asset-item id="burger4" src="https://raw.githubusercontent.com/GKGameWorld/arprojekt/main/aframe/examples/suestoff.gltf"></a-asset-item>
         </a-assets>
         <!-- Marker definiert -->
-        <a-marker registerevents type='barcode' value='22'>
+        <a-marker type='barcode' value='22'>
             <!-- Modell hinzugefügt -->
             <a-entity id="BurgerView" >
                 <a-gltf-model id="BurgerModel" src="#burger4"></a-gltf-model>
             </a-entity>
         </a-marker>
-        <!-- Button
-        <a-entity id="ButtonView" cursor="rayOrigin: cursor">
-            <a-box cursor-listener id="Button1" position=" 0 0 5.0" width="1" height="4" color="grey"></a-box>
-        </a-entity>  -->
       <!-- Kamera -->
       <a-entity camera></a-entity>
     </a-scene>
