@@ -7,36 +7,6 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar.js"></script>
     <link rel="stylesheet" href="https://raw.githack.com/GKGameWorld/arprojekt/main/css/style.css">
-    <!-- Modify -->
-    <script>
-        sessionStorage.setItem('Burgernumber', '1');
-    </script>
-    <script>
-
-        var BURGER = [
-            '#burger1',
-            '#burger2',
-            '#burger3'
-        ];
-
-        var element = document.getElementById("btn");
-        element.addEventListener("click", changeBurger);
-
-        function changeBurger() {
-            var parent = document.getElementById('BurgerView');
-            var existingModel = document.getElementById('BurgerModel');
-            parent.removeChild(existingModel);
-
-            var index = sessionStorage.getItem('Burgernumber');
-            index = +1;
-            sessionStorage.setItem('Burgernumber', index);
-
-            var newModel = document.createElement('a-gltf-model');
-            newModel.setAttribute('id', 'BurgerModel');
-            newModel.setAttribute('src', BURGER[localStorage.getItem('Burgernumber')]);
-            parent.appendChild(newModel);
-        }
-    </script>
 </head>
 
 <body style="margin: 0; overflow: hidden;">
@@ -69,5 +39,36 @@
         <a-entity camera></a-entity>
     </a-scene>
 </body>
+
+    <!-- Modify -->
+<script>
+    sessionStorage.setItem('Burgernumber', '1');
+</script>
+<script>
+
+    var BURGER = [
+        '#burger1',
+        '#burger2',
+        '#burger3'
+    ];
+
+    var element = document.getElementById("btn");
+    element.addEventListener("click", changeBurger);
+
+    function changeBurger() {
+        var parent = document.getElementById('BurgerView');
+        var existingModel = document.getElementById('BurgerModel');
+        parent.removeChild(existingModel);
+
+        var index = sessionStorage.getItem('Burgernumber');
+        index = +1;
+        sessionStorage.setItem('Burgernumber', index);
+
+        var newModel = document.createElement('a-gltf-model');
+        newModel.setAttribute('id', 'BurgerModel');
+        newModel.setAttribute('src', BURGER[localStorage.getItem('Burgernumber')]);
+        parent.appendChild(newModel);
+    }
+</script>
 
 </html>
