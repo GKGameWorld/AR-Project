@@ -8,7 +8,7 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar.js"></script>
     <!-- Modify -->
     <script>
-        localStorage.setItem('Burgernumber', '1');
+        sessionStorage.setItem('Burgernumber', '1');
     </script>
     <script>
         AFRAME.registerComponent('cursor-listener', {
@@ -26,7 +26,10 @@
                     var existingModel = document.getElementById('BurgerModel');
                     parent.removeChild(existingModel);
 
-                    localStorage.setItem('Burgernumber', '2');
+                    var index = sessionStorage.getItem('Burgernumber');
+                    
+                    index = +1;
+                    sessionStorage.setItem('Burgernumber', index);
 
                     var newModel = document.createElement('a-gltf-model');
                     newModel.setAttribute('id', 'BurgerModel');
@@ -45,7 +48,7 @@
 <body style="margin: 0; overflow: hidden;">
     <a-scene vr-mode-ui="enabled: false" embedded stats
         arjs='sourceType: webcam; labelingMode: black_region; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
-        <button cursor-listener class="favorite styled" type="button"> Next Burger </button>
+        <button class="favorite styled" type="button"> Next Burger </button>
         <!-- Asset management system-->
         <a-assets>
             <a-asset-item id="burger1"
@@ -64,8 +67,8 @@
         <!-- Marker definiert -->
         <a-marker type='barcode' value='22'>
             <!-- Modell hinzugefügt -->
-            <a-entity id="BurgerView">
-                <a-gltf-model id="BurgerModel" src="#burger4"></a-gltf-model>
+            <a-entity cursor-listener id="BurgerView">
+                <a-gltf-model id="BurgerModel" src='#burger4'></a-gltf-model>
             </a-entity>
         </a-marker>
         <!-- Kamera -->
