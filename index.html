@@ -11,6 +11,25 @@
         sessionStorage.setItem('Burgernumber', '1');
     </script>
     <script>
+        const element = document.getElementById("btn");
+        element.addEventListener("click", changeBurger);
+
+        function changeBurger() {
+            var parent = document.getElementById('BurgerView');
+            var existingModel = document.getElementById('BurgerModel');
+            parent.removeChild(existingModel);
+
+            var index = sessionStorage.getItem('Burgernumber');
+            index = +1;
+            sessionStorage.setItem('Burgernumber', index);
+
+            var newModel = document.createElement('a-gltf-model');
+            newModel.setAttribute('id', 'BurgerModel');
+            newModel.setAttribute('src', BURGER[localStorage.getItem('Burgernumber')]);
+            parent.appendChild(newModel);
+        }
+    </script>
+    <script>
         AFRAME.registerComponent('cursor-listener', {
             init: function () {
                 var el = this.el;
@@ -27,7 +46,7 @@
                     parent.removeChild(existingModel);
 
                     var index = sessionStorage.getItem('Burgernumber');
-                    
+
                     index = +1;
                     sessionStorage.setItem('Burgernumber', index);
 
@@ -48,7 +67,7 @@
 <body style="margin: 0; overflow: hidden;">
     <a-scene vr-mode-ui="enabled: false" embedded stats
         arjs='sourceType: webcam; labelingMode: black_region; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
-        <button class="favorite styled" type="button"> Next Burger </button>
+        <button id="btn" class="favorite styled" type="button"> Next Burger </button>
         <!-- Asset management system-->
         <a-assets>
             <a-asset-item id="burger1"
@@ -67,7 +86,7 @@
         <!-- Marker definiert -->
         <a-marker type='barcode' value='22'>
             <!-- Modell hinzugefügt -->
-            <a-entity cursor-listener id="BurgerView">
+            <a-entity id="BurgerView">
                 <a-gltf-model id="BurgerModel" src='#burger4'></a-gltf-model>
             </a-entity>
         </a-marker>
