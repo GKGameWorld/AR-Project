@@ -1,28 +1,27 @@
 AFRAME.registerComponent('cursor-listener', {
-            init: function () {
-            var el = this.el;
-            
-            var BURGER = [
-            '#burger1',
-            '#burger2',
-            '#burger3'
-            ];
+  init: function () {
+    var el = this.el;
 
-            el.addEventListener('click', function (event) {
-            var parent = document.getElementById('BurgerView');
-            var existingModel = document.getElementById('BurgerModel');
-            parent.removeChild(existingModel);
+    var BURGER = [
+      '#burger1',
+      '#burger2',
+      '#burger3'
+    ];
 
-            var index = 1;
-            index = +1;
+    el.addEventListener('click', function (event) {
+      var parent = document.getElementById('BurgerView');
+      var existingModel = document.getElementById('BurgerModel');
+      parent.removeChild(existingModel);
 
-            var newModel = document.createElement('a-gltf-model');
-            newModel.setAttribute('id', 'BurgerModel');
-            newModel.setAttribute('src', BURGER[index]);
-            parent.appendChild(newModel);
+      index = localStorage.getItem('Burgernumber');
 
-            console.log(index);
-            console.log(BURGER.length);
-          });
-          }
-        });
+      var newModel = document.createElement('a-gltf-model');
+      newModel.setAttribute('id', 'BurgerModel');
+      newModel.setAttribute('src', BURGER[index]);
+      parent.appendChild(newModel);
+
+      console.log(index);
+      console.log(BURGER.length);
+    });
+  }
+});
