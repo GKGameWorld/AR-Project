@@ -19,7 +19,7 @@
             '#burger3'
         ];
 
-        const element = document.getElementById("btn");
+        var element = document.getElementById("btn");
         element.addEventListener("click", changeBurger);
 
         function changeBurger() {
@@ -40,9 +40,9 @@
 </head>
 
 <body style="margin: 0; overflow: hidden;">
+    <button id="btn" class="favorite styled" type="button"> Next Burger </button>
     <a-scene vr-mode-ui="enabled: false" embedded stats
         arjs='sourceType: webcam; labelingMode: black_region; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
-        <button id="btn" class="favorite styled" type="button"> Next Burger </button>
         <!-- Asset management system-->
         <a-assets>
             <a-asset-item id="burger1"
