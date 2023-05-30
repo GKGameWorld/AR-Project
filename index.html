@@ -58,7 +58,7 @@
         parent.removeChild(existingModel);
 
         var index = sessionStorage.getItem('Burgernumber');
-        index = +1;
+        index = index +1;
         sessionStorage.setItem('Burgernumber', index);
 
         var newModel = document.createElement('a-gltf-model');
