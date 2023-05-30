@@ -32,13 +32,16 @@
         <a-marker type='barcode' value='22'>
             <!-- Modell hinzugefügt -->
             <a-entity id="BurgerView">
-                <a-gltf-model id="BurgerModel" src='#burger4'></a-gltf-model>
+                <a-gltf-model id="BurgerModel" src=''></a-gltf-model>
             </a-entity>
         </a-marker>
         <!-- Kamera -->
         <a-entity camera></a-entity>
     </a-scene>
 </body>
+<script>
+    sessionStorage.setItem('Burgernumber', 0);
+</script>
 
     <!-- Modify -->
 <script>
@@ -46,7 +49,8 @@
     var BURGER = [
         '#burger1',
         '#burger2',
-        '#burger3'
+        '#burger3',
+        '#burger4'
     ];
 
     var element = document.getElementById("btn");
