@@ -13,11 +13,11 @@ AFRAME.registerComponent('cursor-listener', {
       var existingModel = document.getElementById('BurgerModel');
       parent.removeChild(existingModel);
 
-      index = localStorage.getItem('Burgernumber');
+      
 
       var newModel = document.createElement('a-gltf-model');
       newModel.setAttribute('id', 'BurgerModel');
-      newModel.setAttribute('src', BURGER[index]);
+      newModel.setAttribute('src', BURGER[localStorage.getItem('Burgernumber')]);
       parent.appendChild(newModel);
 
       console.log(index);
