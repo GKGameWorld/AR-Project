@@ -20,8 +20,10 @@
     box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
 
-.btn-base {
-    left: 60%;
-    top: 70%;
-    position: fixed;
+@media (min-width: 400px){
+    .styled {
+        position: relative;
+        left: 70%;
+        top: 60%;
+    }
 }
