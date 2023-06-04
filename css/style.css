@@ -1,4 +1,6 @@
 .styled {
+    left: 20px;
+    top: 20px;
     border: 0;
     line-height: 2.5;
     padding: 0 20px;
@@ -18,12 +20,4 @@
 
 .styled:active {
     box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
-}
-
-@media (min-width: 400px){
-    .styled {
-        position: absolute;
-        left: 80%;
-        top: 80%;
-    }
 }
