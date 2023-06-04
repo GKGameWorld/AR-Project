@@ -23,4 +23,5 @@
 .btn-base {
     left: 60%;
     top: 70%;
+    position: fixed;
 }
