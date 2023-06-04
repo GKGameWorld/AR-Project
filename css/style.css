@@ -8,8 +8,8 @@
     text-shadow: 1px 1px 1px #000;
     border-radius: 10px;
     left: 20px;
-    top: 20px;
-    position: fixed;
+    top: 20px; 
+    position: absolute;
     z-index: 1000;
     background-color: rgb(2, 51, 9);
     background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
