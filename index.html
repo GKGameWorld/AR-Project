@@ -33,6 +33,7 @@
             <!-- Modell hinzugefügt -->
             <a-entity id="BurgerView">
                 <a-gltf-model id="BurgerModel" src=''></a-gltf-model>
+                <a-entity id="Lebensmittelinfo"></a-entity>
             </a-entity>
             <!-- Lebensmittelinformation-->
         </a-marker>
@@ -59,10 +60,12 @@
     function changeBurger() {
         var parent = document.getElementById('BurgerView');
         var existingModel = document.getElementById('BurgerModel');
+        var existingText = document.getElementById('Lebensmittelinfo');
         parent.removeChild(existingModel);
+        parent.removeChild(existingText);
 
         var index = parseInt(sessionStorage.getItem('Burgernumber'));
-        if(index > BURGER.length){
+        if(index => BURGER.length){
             index = 0;
         }
         else{
@@ -74,11 +77,13 @@
         var newModel = document.createElement('a-gltf-model');
         newModel.setAttribute('id', 'BurgerModel');
         newModel.setAttribute('src', BURGER[index]);
+        newModel.setAttribute('scale', '3 3 3');
         parent.appendChild(newModel);
 
         var newInformation = document.createElement('a-entity');
-        newInformation.setAttribute('position', '2.5 1 1');
-        newInformation.setAttribute('text', 'anchor: right; width: 1.5; color: white; value:Hello World!')
+        newModel.setAttribute('id', 'Lebensmittelinfo');
+        newInformation.setAttribute('position', '9.5 4 1');
+        newInformation.setAttribute('text', 'anchor: right; width: 7; color: white; value:Lebensmittelinformation')
         parent.appendChild(newInformation);
     }
 </script>
