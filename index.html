@@ -34,24 +34,19 @@
             <a-entity id="BurgerView">
                 <a-gltf-model id="BurgerModel" src=''></a-gltf-model>
             </a-entity>
+            <!-- Lebensmittelinformation-->
         </a-marker>
         <!-- Kamera -->
         <a-entity camera></a-entity>
     </a-scene>
     <!-- Button -->
     <button id="btn" class="styled" type="button"> Next Burger </button>
-    <!-- Lebensmittelinformation -->
-    <div class="lmi">
-        <h2>Lebensmittelinformation</h2>
-        <ul>
-            <li>Kcal - </li>
-        </ul>
-    </div>
 </body>
     <!-- Modify -->
 <script>
 
     var BURGER = [
+        '#burger0',
         '#burger1',
         '#burger2',
         '#burger3',
@@ -67,13 +62,24 @@
         parent.removeChild(existingModel);
 
         var index = parseInt(sessionStorage.getItem('Burgernumber'));
-        index++;
+        if(index > BURGER.length){
+            index = 0;
+        }
+        else{
+            index++;
+        }
+
         sessionStorage.setItem('Burgernumber', index);
 
         var newModel = document.createElement('a-gltf-model');
         newModel.setAttribute('id', 'BurgerModel');
         newModel.setAttribute('src', BURGER[index]);
         parent.appendChild(newModel);
+
+        var newInformation = document.createElement('a-entity');
+        newInformation.setAttribute('position', '2.5 1 1');
+        newInformation.setAttribute('text', 'anchor: right; width: 1.5; color: white; value:Hello World!')
+        parent.appendChild(newInformation);
     }
 </script>
 
