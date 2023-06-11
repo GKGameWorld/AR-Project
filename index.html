@@ -72,10 +72,10 @@
 
         var index = parseInt(sessionStorage.getItem('Burgernumber'));
 
+        index = index + 1;
+
         if(index >= BURGER.length){
             index = 1;
-        } else {
-            index = index + 1;
         }
 
         sessionStorage.setItem('Burgernumber', index);
