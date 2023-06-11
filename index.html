@@ -11,7 +11,7 @@
 </head>
 
 <body style="margin: 0; overflow: hidden;">
-    <a-scene vr-mode-ui="enabled: false" embedded stats
+    <a-scene vr-mode-ui="enabled: false" embedded
         arjs='sourceType: webcam; labelingMode: black_region; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
         <!-- Asset management system-->
         <a-assets>
@@ -66,9 +66,7 @@
     function changeBurger() {
         var parent = document.getElementById('BurgerView');
         var existingModel = document.getElementById('BurgerModel');
-        var existingText = document.getElementById('Lebensmittelinfo');
         parent.removeChild(existingModel);
-        parent.removeChild(existingText);
 
         var index = parseInt(sessionStorage.getItem('Burgernumber'));
 
@@ -86,13 +84,8 @@
         newModel.setAttribute('src', BURGER[index]);
         newModel.setAttribute('scale', '3 3 3');
         parent.appendChild(newModel);
-
-        var newInformation = document.createElement('a-entity');
-        newModel.setAttribute('id', 'Lebensmittelinfo');
-        newInformation.setAttribute('position', '9.5 4 1');
-        newInformation.setAttribute('text', 'anchor: right; width: 7; color: white; value:Lebensmittelinformation')
-        parent.appendChild(newInformation);
     }
+
 </script>
 
 </html>
