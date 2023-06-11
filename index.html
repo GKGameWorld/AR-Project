@@ -38,7 +38,9 @@
                 <div class="lebensmittelinfo-container" style="height: auto;">
                     <h1>Lebensmittelinformation</h1>
                     <div class="lebensmittelinfo-group">
-                        <span>Kcal</span>
+                        <span>Kcal: .....</span>
+                        <span>Fett: .....</span>
+                        <span>Eisweiß: .....</span>
                     </div>
                 </div>
             </div>
@@ -70,7 +72,11 @@
 
         var index = parseInt(sessionStorage.getItem('Burgernumber'));
 
-        index = index+1;
+        if(index >= BURGER.length){
+            index = 0;
+        } else {
+            index = index + 1;
+        }
 
         sessionStorage.setItem('Burgernumber', index);
 
