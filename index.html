@@ -33,9 +33,15 @@
             <!-- Modell hinzugefügt -->
             <a-entity id="BurgerView">
                 <a-gltf-model id="BurgerModel" src=''></a-gltf-model>
-                <a-entity id="Lebensmittelinfo"></a-entity>
             </a-entity>
-            <!-- Lebensmittelinformation-->
+            <div class="lebensmittelinfo">
+                <div class="lebensmittelinfo-container" style="height: auto;">
+                    <h1>Lebensmittelinformation</h1>
+                    <div class="lebensmittelinfo-group">
+                        <span>Kcal</span>
+                    </div>
+                </div>
+            </div>
         </a-marker>
         <!-- Kamera -->
         <a-entity camera></a-entity>
@@ -43,7 +49,7 @@
     <!-- Button -->
     <button id="btn" class="styled" type="button"> Next Burger </button>
 </body>
-    <!-- Modify -->
+<!-- Modify -->
 <script>
 
     var BURGER = [
@@ -65,12 +71,8 @@
         parent.removeChild(existingText);
 
         var index = parseInt(sessionStorage.getItem('Burgernumber'));
-        if(index => BURGER.length){
-            index = 0;
-        }
-        else{
-            index++;
-        }
+
+        index++;
 
         sessionStorage.setItem('Burgernumber', index);
 

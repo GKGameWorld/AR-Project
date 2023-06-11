@@ -10,7 +10,7 @@
     top: 90%;
     position: absolute;
     z-index: 1000;
-    background-color: rgb(2, 51, 9);
+    background-color: rgb(92, 92, 92);
     background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
     box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
 }
@@ -18,3 +18,28 @@
 .styled:active {
     box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
+
+.lebensmittelinfo {
+    background-color: #333;
+    color: #fafafa;
+    border-radius: 0;
+    font: 10px monospace;
+    left: 5px;
+    line-height: 1em;
+    opacity: 0.85;
+    overflow: hidden;
+    padding: 10px;
+    position: fixed;
+    top: 5px;
+    width: 300px;
+    z-index: 10000;
+}
+
+.lebensmittelinfo-group {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+    margin-bottom: 5px;
+  }
